@@ -6,7 +6,7 @@ This project requires dbt version 1.8, currently in alpha and will probably only
 
 The project consists of one seed, one model, and one unit test. Truly minimal. The unit test 
 
-Steps to test:
+Steps to run the unit test:
 
 1. Start a local postgres database with docker:
 
@@ -32,7 +32,7 @@ unittest:
 
 3. Create the seed by running `dbt seed`.
 
-4. Run the unit test, which is part of the normal tests: `dbt test`
+4. Run the unit test, which is part of the normal tests: `dbt test`.
 
 5. You should see an output similar to this:
 
