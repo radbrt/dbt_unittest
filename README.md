@@ -32,7 +32,7 @@ unittest:
 
 3. Create the seed by running `dbt seed`.
 
-4. Run the unit test, which is part of the normal tests: `dbt test`.
+4. Run the unit test, which is part of the normal tests: `dbt test`. Our unit test is located in `models/jaffle/customers.yml`, in the block aptly named `unit_tests`, and gets picked up automatically.
 
 5. You should see an output similar to this:
 
