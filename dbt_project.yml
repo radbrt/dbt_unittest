@@ -1,4 +1,4 @@
-name: 'japg'
+name: 'dbt_unittest'
 version: '1.0.0'
 config-version: 2
 
@@ -16,6 +16,6 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  japg:
+  dbt_unittest:
     jaffle:
       +materialized: table
