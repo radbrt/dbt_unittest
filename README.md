@@ -34,3 +34,21 @@ unittest:
 
 4. Run the unit test, which is part of the normal tests: `dbt test`
 
+5. You should see an output similar to this:
+
+```
+22:33:41  Running with dbt=1.8.0-a1
+22:33:41  Registered adapter: postgres=1.8.0-a1
+22:33:42  Found 1 model, 1 seed, 0 sources, 0 exposures, 0 metrics, 409 macros, 0 groups, 0 semantic models, 1 unit test
+22:33:42  
+22:33:42  Concurrency: 1 threads (target='dev')
+22:33:42  
+22:33:42  1 of 1 START unit_test unit_customers .......................................... [RUN]
+22:33:42  1 of 1 PASS unit_customers ..................................................... [PASS in 0.16s]
+22:33:42  
+22:33:42  Finished running 1 unit_test in 0 hours 0 minutes and 0.31 seconds (0.31s).
+22:33:42  
+22:33:42  Completed successfully
+22:33:42  
+22:33:42  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+```
