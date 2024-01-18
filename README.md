@@ -2,7 +2,7 @@
 
 Just a small proof-of-concept for using unit tests in dbt.
 
-This project requires dbt version 1.8, currently in alpha and will probably only work together with postgres (which is part of the core dbt package). To install it, follow the "install from source" instruction in the dbt documentation.
+This project requires dbt version 1.8, currently in alpha and will probably only work together with postgres (which is part of the core dbt package). To install it, follow the "install from source" instruction in the dbt documentation: https://docs.getdbt.com/docs/core/source-install
 
 The project consists of one seed, one model, and one unit test. Truly minimal. The unit test 
 
