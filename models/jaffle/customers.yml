@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customers
+
+unit_tests:
+  - name: unit_customers # this is the unique name of the test
+    model: customers # name of the model I'm unit testing
+    given: # optional: list of inputs to provide as fixtures
+      - input: ref('seed_customers')
+        format: csv
+        rows: |
+          ix,name
+          1,Yay
+          2,Unittest
+    expect: # required: the expected output given the inputs above
+      format: csv
+      rows: |
+        ix2,name
+        2,YAY
+        4,UNITTEST

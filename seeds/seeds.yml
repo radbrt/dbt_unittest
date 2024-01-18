@@ -1,0 +1,7 @@
+version: 2
+
+seeds:
+  - name: seed_customers
+    config:
+      column_types:
+        name: varchar(50)

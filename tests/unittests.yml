@@ -1,0 +1,16 @@
+unit_tests:
+  - name: test_basic # this is the unique name of the test
+    model: src_n2koder # name of the model I'm unit testing
+    given: # optional: list of inputs to provide as fixtures
+      - input: source('ssb', 'n2koder')
+        format: csv
+        rows: |
+          n2,n_subgroups
+          0.,1
+          1.,1
+    expect: # required: the expected output given the inputs above
+      format: csv
+      rows: |
+        n2, n_subgroups
+        0., 1
+        1., 1
