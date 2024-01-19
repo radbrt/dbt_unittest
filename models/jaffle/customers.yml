@@ -4,6 +4,7 @@ models:
   - name: customers
 
 unit_tests:
+  # Test both columns
   - name: unit_customers # this is the unique name of the test
     model: customers # name of the model I'm unit testing
     given: # optional: list of inputs to provide as fixtures
@@ -19,3 +20,38 @@ unit_tests:
         ix2,name
         2,YAY
         4,UNITTEST
+  # Test just index column
+  # We have defined both columns in input, but only one in output
+  # We could also have skipped the name column in input, with he same result.
+  - name: unit_index # this is the unique name of the test
+    model: customers # name of the model I'm unit testing
+    given: # optional: list of inputs to provide as fixtures
+      - input: ref('seed_customers')
+        format: csv
+        rows: |
+          ix,name
+          1,Yay
+          2,Unittest
+    expect: # required: the expected output given the inputs above
+      format: csv
+      rows: |
+        ix2
+        2
+        4
+  # Test just name column
+  # We are omitting the index column both in the input and the output
+  - name: unit_name # this is the unique name of the test
+    model: customers # name of the model I'm unit testing
+    given: # optional: list of inputs to provide as fixtures
+      - input: ref('seed_customers')
+        format: csv
+        rows: |
+          name
+          Yay
+          Unittest
+    expect: # required: the expected output given the inputs above
+      format: csv
+      rows: |
+        name
+        YAY
+        UNITTEST
