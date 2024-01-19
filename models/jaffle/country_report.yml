@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: country_report
+
+unit_tests:
+  # Test both columns
+  - name: unit_report # this is the unique name of the test
+    model: country_report # name of the model I'm unit testing
+    given: # optional: list of inputs to provide as fixtures
+      - input: ref('seed_customers')
+        format: csv
+        rows: |
+          ix,name,country
+          1,Frodo,middle earth
+          2,Mr. Tumnus,narnia
+          3,Lucy,narnia
+      - input: ref('seed_countries')
+        format: csv
+        rows: |
+          name
+          middle earth
+          narnia
+    expect: # required: the expected output given the inputs above
+      format: csv
+      rows: |
+        country_name,customer_count
+        narnia,2
+        middle earth,1

@@ -1,4 +1,4 @@
-ix,name
-1,John
-2,Jane
-3,Joe
+ix,name,country
+1,John,USA
+2,Jane,USA
+3,Joe,Germany
